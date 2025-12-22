@@ -1,0 +1,20 @@
+# docker-compose.yml
+services:
+  app:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile
+    volumes:
+      - .:/app
+      - node_modules:/app/node_modules
+    ports:
+      - "3000:3000"
+    environment:
+      - HOST=0.0.0.0
+      - NODE_ENV=development
+      # WSL2 で HMR が効かない場合は以下を有効化
+      - WATCHPACK_POLLING=true
+    tty: true
+    stdin_open: true
+volumes:
+  node_modules:

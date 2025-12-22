@@ -1,0 +1,7 @@
+{
+  "name": "@biz-tool-proto/app",
+  "private": true,
+  "dependencies": {
+    "@biz-tool-proto/base": "workspace:*"
+  }
+}

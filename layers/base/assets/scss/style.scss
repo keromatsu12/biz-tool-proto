@@ -1,0 +1,16 @@
+// layers/base/assets/scss/style.scss
+// @use 'variables' as *; // Handled by additionalData globally if configured, otherwise explicit here.
+// But if additionalData is used, we don't need it here for global styles, but usually style.scss is just imports.
+// If I use variables in style.scss, I need to import them or rely on additionalData.
+// additionalData prepends to every SCSS *file*.
+// If style.scss is processed as SCSS, it will get the variables.
+
+// Foundation
+// @import "foundation/reset";
+// @import "foundation/base";
+
+body {
+  margin: 0;
+  font-family: sans-serif;
+  // color: $color-dark; // This will work if additionalData is set correctly
+}
