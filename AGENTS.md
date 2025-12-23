@@ -164,6 +164,14 @@ Container / Presentational パターン
 
 ### **6.3. テストコード実装ポリシー (追加)**
 
+#### **6.4. テストファイルの配置**
+
+テストファイルはソースファイルと同じ階層には置かず、各レイヤー内の `tests` ディレクトリにソースコード構成をミラーリングして配置します。
+
+例:
+- ソース: `layers/base/components/base/SideMenu.vue`
+- テスト: `layers/base/tests/components/base/SideMenu.spec.ts`
+
 テストコードの可読性と保守性を統一するため、以下の記述ルールを遵守してください。
 
 #### **1\. AAA パターン (Arrange-Act-Assert)**

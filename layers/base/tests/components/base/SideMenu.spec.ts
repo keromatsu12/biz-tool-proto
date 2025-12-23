@@ -1,6 +1,6 @@
 import { mount } from '@vue/test-utils'
 import { describe, it, expect } from 'vitest'
-import SideMenu from './SideMenu.vue'
+import SideMenu from '../../../components/base/SideMenu.vue'
 import { Home } from 'lucide-vue-next'
 
 const mockItems = [
