@@ -1,0 +1,68 @@
+@use "sass:color";
+@use "../../foundation/variables" as *;
+
+.c-input-text {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: $spacing-xs;
+
+  &__label {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: $color-text;
+  }
+
+  &__wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+
+  &__input {
+    width: 100%;
+    height: 40px;
+    padding: 0 $spacing-md;
+    font-size: 1rem;
+    color: $color-text;
+    background-color: $color-white;
+    border: 1px solid $color-border;
+    border-radius: 4px;
+    outline: none;
+    transition: all 0.2s ease;
+
+    &::placeholder {
+      color: $color-text-light;
+    }
+
+    &:focus {
+      border-color: $color-primary;
+      box-shadow: 0 0 0 2px color.adjust($color-primary, $alpha: -0.8);
+    }
+
+    &:disabled {
+      background-color: $color-bg;
+      cursor: not-allowed;
+      color: $color-text-light;
+    }
+
+    &:readonly {
+      background-color: $color-bg;
+    }
+  }
+
+  &__error {
+    font-size: 0.75rem;
+    color: $color-danger;
+  }
+
+  &.has-error {
+    .c-input-text__input {
+      border-color: $color-danger;
+
+      &:focus {
+        box-shadow: 0 0 0 2px color.adjust($color-danger, $alpha: -0.8);
+      }
+    }
+  }
+}

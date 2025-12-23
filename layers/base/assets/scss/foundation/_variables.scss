@@ -6,6 +6,18 @@
 $color-primary: #4169E1; // Royal Blue
 $color-primary-light: color.adjust($color-primary, $lightness: 40%);
 $color-primary-dark: color.adjust($color-primary, $lightness: -10%);
+
+$color-secondary: #64748B; // Slate
+$color-secondary-light: color.adjust($color-secondary, $lightness: 40%);
+$color-secondary-dark: color.adjust($color-secondary, $lightness: -10%);
+
+$color-danger: #EF4444; // Red
+$color-danger-light: color.adjust($color-danger, $lightness: 40%);
+$color-danger-dark: color.adjust($color-danger, $lightness: -10%);
+
+$color-success: #10B981; // Green
+$color-warning: #F59E0B; // Amber
+
 $color-text: #333333;
 $color-text-light: #666666;
 $color-bg: #F5F7FA;

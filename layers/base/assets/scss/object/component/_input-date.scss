@@ -1,0 +1,58 @@
+@use "sass:color";
+@use "../../foundation/variables" as *;
+
+.c-input-date {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: $spacing-xs;
+
+  &__label {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: $color-text;
+  }
+
+  &__wrapper {
+    // Override vue-datepicker styles
+    .dp__theme_light {
+      --dp-primary-color: #{$color-primary};
+      --dp-text-color: #{$color-text};
+      --dp-border-color: #{$color-border};
+      --dp-border-radius: 4px;
+      --dp-font-family: inherit;
+    }
+
+    .dp__input {
+      height: 40px;
+      font-size: 1rem;
+      border-color: $color-border;
+
+      &:focus {
+        border-color: $color-primary;
+        box-shadow: 0 0 0 2px color.adjust($color-primary, $alpha: -0.8);
+      }
+    }
+
+    // Disabled state
+    .dp__disabled {
+       background-color: $color-bg;
+       cursor: not-allowed;
+    }
+  }
+
+  &__error {
+    font-size: 0.75rem;
+    color: $color-danger;
+  }
+
+  &.has-error {
+    .dp__input {
+      border-color: $color-danger;
+
+      &:focus {
+        box-shadow: 0 0 0 2px color.adjust($color-danger, $alpha: -0.8);
+      }
+    }
+  }
+}

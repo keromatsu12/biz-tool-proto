@@ -1,0 +1,136 @@
+@use "sass:color";
+@use "../../foundation/variables" as *;
+
+.c-input-file {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: $spacing-xs;
+
+  &__label {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: $color-text;
+  }
+
+  &__dropzone {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: $spacing-lg;
+    border: 2px dashed $color-border;
+    border-radius: 4px;
+    background-color: $color-bg;
+    cursor: pointer;
+    transition: all 0.2s ease;
+
+    &:hover:not(.is-disabled) {
+      border-color: $color-primary;
+      background-color: color.adjust($color-primary, $lightness: 45%);
+    }
+
+    &.is-dragging {
+      border-color: $color-primary;
+      background-color: color.adjust($color-primary, $lightness: 40%);
+    }
+  }
+
+  &__input {
+    display: none;
+  }
+
+  &__placeholder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: $spacing-xs;
+    color: $color-text-light;
+    text-align: center;
+  }
+
+  &__icon {
+    color: $color-primary;
+  }
+
+  &__text {
+    font-size: 0.875rem;
+    font-weight: 500;
+  }
+
+  &__subtext {
+    font-size: 0.75rem;
+    color: $color-text-light;
+  }
+
+  &__preview {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: $spacing-sm $spacing-md;
+    background-color: $color-white;
+    border: 1px solid $color-border;
+    border-radius: 4px;
+  }
+
+  &__info {
+    display: flex;
+    align-items: center;
+    gap: $spacing-sm;
+    overflow: hidden;
+  }
+
+  &__file-icon {
+    color: $color-primary;
+    flex-shrink: 0;
+  }
+
+  &__name {
+    font-size: 0.875rem;
+    color: $color-text;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  &__size {
+    font-size: 0.75rem;
+    color: $color-text-light;
+    flex-shrink: 0;
+  }
+
+  &__remove {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    border: none;
+    background: transparent;
+    color: $color-text-light;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: background-color 0.2s;
+
+    &:hover:not(:disabled) {
+      background-color: $color-bg;
+      color: $color-danger;
+    }
+  }
+
+  &__error {
+    font-size: 0.75rem;
+    color: $color-danger;
+  }
+
+  &.has-error {
+    .c-input-file__dropzone {
+      border-color: $color-danger;
+    }
+  }
+
+  &.is-disabled {
+    opacity: 0.6;
+    pointer-events: none;
+  }
+}
