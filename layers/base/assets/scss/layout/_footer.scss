@@ -1,0 +1,25 @@
+.l-footer {
+  height: $footer-height;
+  background-color: $color-white;
+  border-top: 1px solid $color-border;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  z-index: 50; // Below header/sidebar usually
+  display: flex;
+  align-items: center;
+  padding: 0 $spacing-md;
+
+  // Responsive positioning
+  left: 0;
+  @include mq-desk {
+    left: $sidebar-width;
+  }
+
+  &__inner {
+    width: 100%;
+    text-align: center;
+    color: $color-text-light;
+    font-size: 0.875rem;
+  }
+}
