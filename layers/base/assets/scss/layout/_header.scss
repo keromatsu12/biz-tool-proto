@@ -1,0 +1,41 @@
+.l-header {
+  height: $header-height;
+  background-color: $color-white;
+  border-bottom: 1px solid $color-border;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: $z-index-header;
+  padding: 0 $spacing-md;
+
+  &__inner {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__toggle {
+    display: none;
+    margin-right: $spacing-md;
+    color: $color-text;
+
+    @include mq-mob {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+
+  &__logo {
+    font-weight: bold;
+    font-size: 1.25rem;
+    color: $color-primary;
+  }
+
+  &__actions {
+    display: flex;
+    gap: $spacing-sm;
+  }
+}

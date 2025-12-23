@@ -1,4 +1,7 @@
 {
   "name": "@biz-tool-proto/base",
-  "private": true
+  "private": true,
+  "dependencies": {
+    "lucide-vue-next": "^0.562.0"
+  }
 }

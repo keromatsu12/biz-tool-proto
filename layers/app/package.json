@@ -2,6 +2,7 @@
   "name": "@biz-tool-proto/app",
   "private": true,
   "dependencies": {
-    "@biz-tool-proto/base": "workspace:*"
+    "@biz-tool-proto/base": "workspace:*",
+    "lucide-vue-next": "^0.562.0"
   }
 }

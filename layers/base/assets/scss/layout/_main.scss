@@ -1,0 +1,19 @@
+.l-main {
+  width: 100%;
+  min-height: 100vh;
+  padding-top: $header-height;
+  padding-bottom: $footer-height;
+  transition: margin-left 0.3s;
+  background-color: $color-bg;
+
+  @include mq-desk {
+    margin-left: $sidebar-width;
+  }
+
+  &__inner {
+    padding: $spacing-lg;
+    width: 100%;
+    margin: 0 auto;
+    // max-width: 1200px; // Optional
+  }
+}

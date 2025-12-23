@@ -1,0 +1,50 @@
+@use "sass:color";
+
+// layers/base/assets/scss/foundation/_variables.scss
+
+// Colors
+$color-primary: #4169E1; // Royal Blue
+$color-primary-light: color.adjust($color-primary, $lightness: 40%);
+$color-primary-dark: color.adjust($color-primary, $lightness: -10%);
+$color-text: #333333;
+$color-text-light: #666666;
+$color-bg: #F5F7FA;
+$color-white: #FFFFFF;
+$color-border: #E2E8F0;
+
+// Layout
+$sidebar-width: 250px;
+$header-height: 60px;
+$footer-height: 40px;
+$z-index-header: 100;
+$z-index-sidebar: 101;
+$z-index-modal: 1000;
+
+// Spacing
+$spacing-xs: 4px;
+$spacing-sm: 8px;
+$spacing-md: 16px;
+$spacing-lg: 24px;
+$spacing-xl: 32px;
+
+// Breakpoints
+$breakpoint-mobile: 1024px;
+
+// Mixins
+@mixin mq-desk {
+  @media (min-width: $breakpoint-mobile + 1px) {
+    @content;
+  }
+}
+
+@mixin mq-mob {
+  @media (max-width: $breakpoint-mobile) {
+    @content;
+  }
+}
+
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
