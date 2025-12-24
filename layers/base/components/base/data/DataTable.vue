@@ -1,7 +1,4 @@
 <script setup lang="ts">
-import { computed } from 'vue';
-import { ArrowUp, ArrowDown } from 'lucide-vue-next';
-
 export interface TableColumn {
   key: string;
   label: string;
@@ -93,8 +90,8 @@ const handleSort = (key: string) => {
               <div class="c-data-table__th-content">
                 {{ col.label }}
                 <span v-if="col.sortable" class="c-data-table__sort-icon">
-                  <ArrowUp v-if="sortKey === col.key && sortOrder === 'asc'" :size="14" />
-                  <ArrowDown v-else-if="sortKey === col.key && sortOrder === 'desc'" :size="14" />
+                  <LucideArrowUp v-if="sortKey === col.key && sortOrder === 'asc'" :size="14" />
+                  <LucideArrowDown v-else-if="sortKey === col.key && sortOrder === 'desc'" :size="14" />
                   <!-- Placeholder to keep height consistent -->
                   <div v-else class="c-data-table__sort-placeholder"></div>
                 </span>

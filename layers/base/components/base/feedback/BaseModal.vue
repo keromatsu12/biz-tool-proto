@@ -1,7 +1,4 @@
 <script setup lang="ts">
-import { X } from 'lucide-vue-next';
-import { onMounted, onUnmounted, watch } from 'vue';
-
 const props = withDefaults(defineProps<{
   modelValue: boolean;
   title?: string;
@@ -61,7 +58,7 @@ watch(() => props.modelValue, (isOpen) => {
           <header class="c-base-modal__header">
             <h2 class="c-base-modal__title">{{ title }}</h2>
             <button class="c-base-modal__close" @click="close" aria-label="Close modal">
-              <X :size="20" />
+              <LucideX :size="20" />
             </button>
           </header>
 

@@ -1,7 +1,4 @@
 <script setup lang="ts">
-import { computed } from 'vue';
-import { TrendingUp, TrendingDown, Minus } from 'lucide-vue-next';
-
 const props = defineProps<{
   label: string;
   value: string | number;
@@ -13,9 +10,9 @@ const props = defineProps<{
 
 const trendIcon = computed(() => {
   if (props.trend === undefined) return null;
-  if (props.trend > 0) return TrendingUp;
-  if (props.trend < 0) return TrendingDown;
-  return Minus;
+  if (props.trend > 0) return 'LucideTrendingUp';
+  if (props.trend < 0) return 'LucideTrendingDown';
+  return 'LucideMinus';
 });
 
 const trendColorClass = computed(() => {

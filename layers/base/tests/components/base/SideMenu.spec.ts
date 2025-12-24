@@ -1,12 +1,11 @@
 import { mount } from '@vue/test-utils'
 import { describe, it, expect } from 'vitest'
 import SideMenu from '../../../components/base/SideMenu.vue'
-import { Home } from 'lucide-vue-next'
 
 const mockItems = [
   {
     label: 'Item 1',
-    icon: Home,
+    icon: 'LucideHome',
     children: [
       { label: 'Sub 1', to: '/sub1' }
     ]

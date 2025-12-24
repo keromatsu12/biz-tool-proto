@@ -1,7 +1,4 @@
 <script setup lang="ts">
-import { computed } from 'vue';
-import { ChevronLeft, ChevronRight, ChevronsLeft, ChevronsRight } from 'lucide-vue-next';
-
 const props = withDefaults(defineProps<{
   currentPage: number;
   totalPages: number;
@@ -65,7 +62,7 @@ const setPage = (page: number) => {
           @click="setPage(1)"
           aria-label="First page"
         >
-          <ChevronsLeft :size="16" />
+          <LucideChevronsLeft :size="16" />
         </button>
       </li>
       <li>
@@ -75,7 +72,7 @@ const setPage = (page: number) => {
           @click="setPage(currentPage - 1)"
           aria-label="Previous page"
         >
-          <ChevronLeft :size="16" />
+          <LucideChevronLeft :size="16" />
         </button>
       </li>
 
@@ -98,7 +95,7 @@ const setPage = (page: number) => {
           @click="setPage(currentPage + 1)"
           aria-label="Next page"
         >
-          <ChevronRight :size="16" />
+          <LucideChevronRight :size="16" />
         </button>
       </li>
       <li>
@@ -108,7 +105,7 @@ const setPage = (page: number) => {
           @click="setPage(totalPages)"
           aria-label="Last page"
         >
-          <ChevronsRight :size="16" />
+          <LucideChevronsRight :size="16" />
         </button>
       </li>
     </ul>

@@ -1,8 +1,4 @@
 <script setup lang="ts">
-import { ref } from 'vue';
-import { Filter, ChevronDown, ChevronUp, X, Check } from 'lucide-vue-next';
-import BaseButton from '../button/BaseButton.vue';
-
 const props = withDefaults(defineProps<{
   title?: string;
   defaultOpen?: boolean;
@@ -37,10 +33,10 @@ const handleReset = () => {
   <div class="c-filter-panel" :class="{ 'is-open': isOpen }">
     <div class="c-filter-panel__header" @click="toggle">
       <div class="c-filter-panel__title-group">
-        <Filter :size="18" class="c-filter-panel__icon" />
+        <LucideFilter :size="18" class="c-filter-panel__icon" />
         <span class="c-filter-panel__title">{{ title }}</span>
       </div>
-      <component :is="isOpen ? ChevronUp : ChevronDown" :size="18" class="c-filter-panel__chevron" />
+      <component :is="isOpen ? 'LucideChevronUp' : 'LucideChevronDown'" :size="18" class="c-filter-panel__chevron" />
     </div>
 
     <div v-show="isOpen" class="c-filter-panel__content">

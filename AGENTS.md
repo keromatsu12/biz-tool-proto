@@ -99,6 +99,17 @@ Container / Presentational パターン
 
 - **実装:** Pinia ストアからデータを取得し、Presentational Components へ流し込む。
 
+### **3.2. 自動インポート (Auto-imports) の活用**
+
+Nuxt の Conventions に従い、以下の要素は明示的に import せず、自動インポートを利用します。
+
+- **Vue Core:** `ref`, `computed`, `watch`, `onMounted` 等
+- **Nuxt Composables:** `useRouter`, `useRoute`, `useHead` 等
+- **Components:** `components/` 配下のコンポーネント（レイヤー間の import も含む）
+- **Icons:** `nuxt-lucide-icons` により、`Lucide` プレフィックス付きで自動利用（例: `<LucideHome />`）。スクリプト内で使用する場合は文字列として扱うか、動的コンポーネント解決を利用する。
+
+**禁止:** `import { ref } from 'vue'` や `import { BaseButton } from '#components'` のような記述は原則禁止とします。
+
 ## ---
 
 **4\. CSS / スタイリング規約 (外部 CSS & BEM)**
@@ -230,6 +241,8 @@ describe ブロック等を用いて、以下の 3 つの観点を網羅・分�
 - **マジックナンバー:** 色、余白、ブレイクポイントはすべて \_variables.scss を参照すること。
 
 - **不適切な型変換:** as any による型チェックの回避。
+
+- **手動インポート:** Vue コア機能、Nuxt 機能、コンポーネント、アイコンの手動 import は禁止。
 
 ## ---
 

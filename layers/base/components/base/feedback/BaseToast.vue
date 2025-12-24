@@ -1,7 +1,4 @@
 <script setup lang="ts">
-import { CheckCircle, AlertCircle, Info, XCircle, X } from 'lucide-vue-next';
-import { onMounted, onUnmounted } from 'vue';
-
 const props = withDefaults(defineProps<{
   modelValue: boolean;
   message: string;
@@ -42,7 +39,6 @@ onUnmounted(() => {
 
 // Assuming usage: <BaseToast v-model="show" ... />
 // Whenever modelValue becomes true, reset timer
-import { watch } from 'vue';
 watch(() => props.modelValue, (val) => {
   if (val) {
     if (timer) clearTimeout(timer);
@@ -53,10 +49,10 @@ watch(() => props.modelValue, (val) => {
 });
 
 const icons = {
-  success: CheckCircle,
-  error: XCircle,
-  info: Info,
-  warning: AlertCircle,
+  success: 'LucideCheckCircle',
+  error: 'LucideXCircle',
+  info: 'LucideInfo',
+  warning: 'LucideAlertCircle',
 };
 </script>
 
@@ -67,7 +63,7 @@ const icons = {
         <component :is="icons[type]" :size="20" class="c-base-toast__icon" />
         <span class="c-base-toast__message">{{ message }}</span>
         <button class="c-base-toast__close" @click="close" aria-label="Close notification">
-          <X :size="16" />
+          <LucideX :size="16" />
         </button>
       </div>
     </Transition>
