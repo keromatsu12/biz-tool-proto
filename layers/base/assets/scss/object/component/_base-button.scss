@@ -1,0 +1,75 @@
+@use "sass:color";
+@use "../../foundation/variables" as *;
+
+.c-base-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  cursor: pointer;
+  border: none;
+  text-decoration: none;
+  gap: $spacing-xs;
+
+  // Variants
+  &--primary {
+    background-color: $color-primary;
+    color: $color-white;
+
+    &:hover:not(.is-disabled) {
+      background-color: $color-primary-dark;
+    }
+  }
+
+  &--secondary {
+    background-color: $color-secondary;
+    color: $color-white;
+
+    &:hover:not(.is-disabled) {
+      background-color: $color-secondary-dark;
+    }
+  }
+
+  &--danger {
+    background-color: $color-danger;
+    color: $color-white;
+
+    &:hover:not(.is-disabled) {
+      background-color: $color-danger-dark;
+    }
+  }
+
+  // Sizes
+  &--small {
+    height: 32px;
+    padding: 0 $spacing-md;
+    font-size: 0.875rem;
+  }
+
+  &--medium {
+    height: 40px;
+    padding: 0 $spacing-lg;
+    font-size: 1rem;
+  }
+
+  &--large {
+    height: 48px;
+    padding: 0 $spacing-xl;
+    font-size: 1.125rem;
+  }
+
+  // Block
+  &--block {
+    display: flex;
+    width: 100%;
+  }
+
+  // Disabled
+  &.is-disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    pointer-events: none;
+  }
+}

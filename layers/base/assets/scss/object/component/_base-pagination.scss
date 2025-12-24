@@ -1,0 +1,66 @@
+@use "sass:color";
+@use "../../foundation/variables" as *;
+
+.c-base-pagination {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: $spacing-md 0;
+  gap: $spacing-lg;
+
+  &__info {
+    font-size: 0.875rem;
+    color: $color-text-light;
+  }
+
+  &__list {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: $spacing-xs;
+  }
+
+  &__btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 32px;
+    height: 32px;
+    padding: 0 4px;
+    border: 1px solid $color-border;
+    background-color: $color-white;
+    color: $color-text;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.875rem;
+    transition: all 0.2s ease;
+
+    &:hover:not(:disabled):not(.is-active) {
+      background-color: $color-bg;
+      border-color: color.adjust($color-border, $lightness: -10%);
+    }
+
+    &.is-active {
+      background-color: $color-primary;
+      color: $color-white;
+      border-color: $color-primary;
+    }
+
+    &:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+      background-color: $color-bg;
+    }
+  }
+
+  &__ellipsis {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    color: $color-text-light;
+  }
+}

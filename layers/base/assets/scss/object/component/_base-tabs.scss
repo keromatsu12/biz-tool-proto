@@ -1,0 +1,65 @@
+@use "sass:color";
+@use "../../foundation/variables" as *;
+
+.c-base-tabs {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+
+  &__header {
+    display: flex;
+    border-bottom: 1px solid $color-border;
+    gap: $spacing-lg;
+    overflow-x: auto;
+    scrollbar-width: none; // Firefox
+
+    &::-webkit-scrollbar {
+      display: none; // Chrome/Safari
+    }
+  }
+
+  &__tab {
+    position: relative;
+    padding: $spacing-md 0;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: $color-text-light;
+    background: none;
+    border: none;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: all 0.2s ease;
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -1px;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background-color: transparent;
+      transition: background-color 0.2s ease;
+    }
+
+    &:hover:not(.is-disabled):not(.is-active) {
+      color: $color-text;
+    }
+
+    &.is-active {
+      color: $color-primary;
+
+      &::after {
+        background-color: $color-primary;
+      }
+    }
+
+    &.is-disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+  }
+
+  &__content {
+    padding-top: $spacing-md;
+  }
+}

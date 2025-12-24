@@ -1,0 +1,72 @@
+@use "sass:color";
+@use "../../foundation/variables" as *;
+
+.c-dashboard-metric {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: $spacing-lg;
+  background-color: $color-white;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  border: 1px solid $color-border;
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-xs;
+  }
+
+  &__label {
+    font-size: 0.875rem;
+    color: $color-text-light;
+    font-weight: 500;
+  }
+
+  &__value-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-xs;
+  }
+
+  &__value {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: $color-text;
+    line-height: 1.2;
+  }
+
+  &__trend {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 0.875rem;
+    font-weight: 500;
+
+    &.text-success { color: $color-success; }
+    &.text-danger { color: $color-danger; }
+    &.text-muted { color: $color-text-light; }
+  }
+
+  &__trend-label {
+    color: $color-text-light;
+    font-weight: 400;
+    margin-left: 4px;
+  }
+
+  &__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    border-radius: 8px;
+    color: $color-white;
+
+    &.bg-primary { background-color: $color-primary; }
+    &.bg-success { background-color: $color-success; }
+    &.bg-warning { background-color: $color-warning; }
+    &.bg-danger { background-color: $color-danger; }
+    &.bg-info { background-color: #0EA5E9; } // Sky Blue
+  }
+}

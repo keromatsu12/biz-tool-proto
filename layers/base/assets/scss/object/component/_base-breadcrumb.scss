@@ -1,0 +1,46 @@
+@use "sass:color";
+@use "../../foundation/variables" as *;
+
+.c-base-breadcrumb {
+  padding: $spacing-sm 0;
+
+  &__list {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: $spacing-xs;
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    gap: $spacing-xs;
+  }
+
+  &__link {
+    display: flex;
+    align-items: center;
+    font-size: 0.875rem;
+    color: $color-text-light;
+    text-decoration: none;
+    transition: color 0.2s ease;
+
+    &:hover:not(.is-current) {
+      color: $color-primary;
+    }
+
+    &.is-current {
+      color: $color-text;
+      font-weight: 500;
+      cursor: default;
+    }
+  }
+
+  &__separator {
+    color: $color-text-light;
+    opacity: 0.5;
+  }
+}
