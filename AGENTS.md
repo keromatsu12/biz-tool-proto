@@ -110,6 +110,10 @@ Nuxt の Conventions に従い、以下の要素は明示的に import せず、
 
 **禁止:** `import { ref } from 'vue'` や `import { BaseButton } from '#components'` のような記述は原則禁止とします。
 
+### **3.3. コンポーネントカタログの更新**
+
+`layers/base/components` 配下に新しい共通コンポーネント（Presentational Component）を追加、または既存コンポーネントの仕様を変更した場合は、必ず `catalog.vue` を更新し、変更内容が視覚的に確認できるようにしてください。
+
 ## ---
 
 **4\. CSS / スタイリング規約 (外部 CSS & BEM)**
