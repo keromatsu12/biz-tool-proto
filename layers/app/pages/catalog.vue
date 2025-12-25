@@ -24,6 +24,11 @@ const numberInput = ref<number | null>(null);
 const searchInput = ref('');
 const dateInput = ref('');
 const selectValue = ref('');
+const radioValue = ref('opt1');
+const checkboxValue = ref(false);
+const checkboxGroupValue = ref(['opt1']);
+const textareaValue = ref('');
+const switchValue = ref(false);
 
 // Tabs
 const activeTab = ref('tab1');
@@ -157,6 +162,48 @@ const breadcrumbItems = [
                   label="File Input"
                 />
             </div>
+          </div>
+          <div class="p-catalog__card">
+             <h3>Selection Controls</h3>
+             <div class="p-catalog__mt">
+               <h4>Radio Buttons</h4>
+               <div class="p-catalog__button-group">
+                 <BaseInputRadio v-model="radioValue" value="opt1" label="Option 1" name="radio-group" />
+                 <BaseInputRadio v-model="radioValue" value="opt2" label="Option 2" name="radio-group" />
+                 <BaseInputRadio v-model="radioValue" value="opt3" label="Disabled" disabled name="radio-group" />
+               </div>
+               <p class="p-catalog__value">Selected: {{ radioValue }}</p>
+             </div>
+
+             <div class="p-catalog__mt">
+               <h4>Checkboxes</h4>
+               <BaseInputCheckbox v-model="checkboxValue" label="Single Checkbox" />
+               <p class="p-catalog__value">Checked: {{ checkboxValue }}</p>
+
+               <div class="p-catalog__mt">
+                 <h5>Group</h5>
+                 <div class="p-catalog__button-group">
+                   <BaseInputCheckbox v-model="checkboxGroupValue" value="opt1" label="Option 1" />
+                   <BaseInputCheckbox v-model="checkboxGroupValue" value="opt2" label="Option 2" />
+                   <BaseInputCheckbox v-model="checkboxGroupValue" value="opt3" label="Disabled" disabled />
+                 </div>
+                 <p class="p-catalog__value">Selected: {{ checkboxGroupValue }}</p>
+               </div>
+             </div>
+
+             <div class="p-catalog__mt">
+                <h4>Switch</h4>
+                <BaseSwitch v-model="switchValue" label="Toggle me" />
+                <p class="p-catalog__value">State: {{ switchValue }}</p>
+             </div>
+          </div>
+          <div class="p-catalog__card">
+              <h3>Text Area</h3>
+              <BaseTextarea v-model="textareaValue" label="Description" placeholder="Type something..." />
+              <p class="p-catalog__value">Value: {{ textareaValue }}</p>
+              <div class="p-catalog__mt">
+                  <BaseTextarea model-value="Readonly content" label="Readonly" readonly />
+              </div>
           </div>
         </div>
       </section>

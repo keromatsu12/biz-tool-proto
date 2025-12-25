@@ -1,0 +1,87 @@
+// _input-radio.scss
+
+.c-input-radio {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+
+  &__wrapper {
+    display: flex;
+    align-items: center;
+    position: relative;
+    gap: 0.5rem;
+    cursor: pointer;
+  }
+
+  &__input {
+    appearance: none;
+    width: 1.25rem;
+    height: 1.25rem;
+    border: 1px solid #cbd5e0;
+    border-radius: 50%;
+    outline: none;
+    transition: all 0.2s;
+    background-color: white;
+    margin: 0;
+    cursor: pointer;
+
+    &:checked {
+      border-color: #3182ce;
+      background-color: white;
+
+      &::after {
+        content: "";
+        display: block;
+        width: 0.625rem;
+        height: 0.625rem;
+        margin: 4px;
+        background-color: #3182ce;
+        border-radius: 50%;
+      }
+    }
+
+    &:focus {
+      box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.5);
+    }
+
+    &:disabled {
+      background-color: #edf2f7;
+      border-color: #cbd5e0;
+      cursor: not-allowed;
+
+      &:checked::after {
+        background-color: #a0aec0;
+      }
+    }
+  }
+
+  &__label {
+    font-size: 1rem;
+    color: #4a5568;
+    cursor: pointer;
+  }
+
+  &__error {
+    font-size: 0.875rem;
+    color: #e53e3e;
+  }
+
+  &.is-disabled {
+    opacity: 0.7;
+
+    .c-input-radio__label {
+      cursor: not-allowed;
+      color: #a0aec0;
+    }
+
+    .c-input-radio__wrapper {
+      cursor: not-allowed;
+    }
+  }
+
+  &.has-error {
+    .c-input-radio__input {
+      border-color: #e53e3e;
+    }
+  }
+}
