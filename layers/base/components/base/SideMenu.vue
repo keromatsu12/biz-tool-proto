@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import { ref } from 'vue';
-import { ChevronDown, ChevronRight } from 'lucide-vue-next';
 import type { MenuItem } from '../../../types/menu';
 
 const props = defineProps<{
@@ -33,8 +31,8 @@ const toggleAccordion = (index: number) => {
             <span class="c-side-menu__label">{{ item.label }}</span>
 
             <span v-if="item.children" class="c-side-menu__arrow-wrapper">
-              <ChevronDown v-if="openIndex === index" :size="16" />
-              <ChevronRight v-else :size="16" />
+              <LucideChevronDown v-if="openIndex === index" :size="16" />
+              <LucideChevronRight v-else :size="16" />
             </span>
           </component>
         </div>

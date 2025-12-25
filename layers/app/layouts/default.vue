@@ -1,35 +1,17 @@
 <script setup lang="ts">
-import { ref } from 'vue';
-import { Home, Users, Settings, FileText, Shield, Lock } from 'lucide-vue-next';
-import type { MenuItem } from '../../base/types/menu'; // Path relative to layers/app/layouts/default.vue?
-// No, layers/app is parallel to layers/base?
-// Structure:
-// layers/app/layouts/default.vue
-// layers/base/types/menu.ts
-// So ../../base/types/menu is correct?
-// layers/app/layouts -> ../ -> layers/app -> ../ -> layers -> /base -> /types.
-// Actually: layers/app/layouts/default.vue -> ../../ -> layers/app?
-// layers/app/layouts/default.vue
-//   dirname: layers/app/layouts
-//   .. -> layers/app
-//   .. -> layers
-//   base -> layers/base
-// So ../../base/types/menu.ts seems correct.
-// However, in Nuxt alias `@base` is configured in `layers/base/nuxt.config.ts`.
-// But `layers/app` extends `base`. Does it inherit aliases? Usually yes.
-// Let's try `@base/types/menu`.
+import type { MenuItem } from '../../base/types/menu';
 
 const isSidebarOpen = ref(false);
 
 const menuItems: MenuItem[] = [
   {
     label: 'Dashboard',
-    icon: Home,
+    icon: 'LucideHome',
     to: '/'
   },
   {
     label: 'User Management',
-    icon: Users,
+    icon: 'LucideUsers',
     children: [
       {
         label: 'Users List',
@@ -46,7 +28,7 @@ const menuItems: MenuItem[] = [
   },
   {
     label: 'Reports',
-    icon: FileText,
+    icon: 'LucideFileText',
     children: [
       { label: 'Monthly', to: '/reports/monthly' },
       { label: 'Yearly', to: '/reports/yearly' }
@@ -54,10 +36,10 @@ const menuItems: MenuItem[] = [
   },
   {
     label: 'Settings',
-    icon: Settings,
+    icon: 'LucideSettings',
     children: [
       { label: 'General', to: '/settings/general' },
-      { label: 'Security', icon: Shield, to: '/settings/security' }
+      { label: 'Security', icon: 'LucideShield', to: '/settings/security' }
     ]
   }
 ];

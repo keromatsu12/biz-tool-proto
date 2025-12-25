@@ -2,7 +2,7 @@ import type { Component } from 'vue';
 
 export interface MenuItem {
   label: string;
-  icon?: Component;
+  icon?: string | Component;
   to?: string;
   children?: MenuItem[];
 }

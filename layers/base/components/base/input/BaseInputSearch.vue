@@ -1,7 +1,4 @@
 <script setup lang="ts">
-import { computed } from 'vue';
-import { Search } from 'lucide-vue-next';
-
 const props = withDefaults(defineProps<{
   modelValue?: string;
   placeholder?: string;
@@ -29,7 +26,7 @@ const handleEnter = () => {
 
 <template>
   <div class="c-input-search" :class="{ 'is-disabled': disabled }">
-    <Search class="c-input-search__icon" :size="18" />
+    <LucideSearch class="c-input-search__icon" :size="18" />
     <input
       type="search"
       :value="modelValue"

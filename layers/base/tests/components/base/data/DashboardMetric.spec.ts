@@ -1,7 +1,6 @@
 import { describe, it, expect } from 'vitest';
 import { mount } from '@vue/test-utils';
 import DashboardMetric from '../../../../components/base/data/DashboardMetric.vue';
-import { Home } from 'lucide-vue-next';
 
 describe('DashboardMetric', () => {
   it('renders correctly', () => {
@@ -34,7 +33,7 @@ describe('DashboardMetric', () => {
       props: {
         label: 'Users',
         value: '10',
-        icon: Home
+        icon: 'LucideHome'
       }
     });
     expect(wrapper.find('.c-dashboard-metric__icon').exists()).toBe(true);

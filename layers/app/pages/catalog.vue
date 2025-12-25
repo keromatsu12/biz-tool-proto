@@ -1,23 +1,4 @@
 <script setup lang="ts">
-import { ref, computed } from 'vue';
-import {
-  BaseButton,
-  BaseInputText,
-  BaseSelect,
-  BaseInputDate,
-  BaseInputFile,
-  BaseInputNumber,
-  BaseInputSearch,
-  BaseToast,
-  BaseModal,
-  BaseCard,
-  StatusLabel,
-  DataTable,
-  BasePagination,
-  BaseBreadcrumb,
-  BaseTabs
-} from '#components';
-
 // --- State Management ---
 
 // Toast

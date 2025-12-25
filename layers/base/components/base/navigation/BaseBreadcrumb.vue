@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import { ChevronRight, Home } from 'lucide-vue-next';
-
 interface BreadcrumbItem {
   label: string;
   to?: string;
@@ -16,9 +14,9 @@ const props = defineProps<{
     <ol class="c-base-breadcrumb__list">
       <li class="c-base-breadcrumb__item">
         <NuxtLink to="/" class="c-base-breadcrumb__link">
-          <Home :size="16" />
+          <LucideHome :size="16" />
         </NuxtLink>
-        <ChevronRight :size="14" class="c-base-breadcrumb__separator" />
+        <LucideChevronRight :size="14" class="c-base-breadcrumb__separator" />
       </li>
 
       <li v-for="(item, index) in items" :key="index" class="c-base-breadcrumb__item">
@@ -32,7 +30,7 @@ const props = defineProps<{
           {{ item.label }}
         </component>
 
-        <ChevronRight
+        <LucideChevronRight
           v-if="index < items.length - 1"
           :size="14"
           class="c-base-breadcrumb__separator"

@@ -1,7 +1,4 @@
 <script setup lang="ts">
-import { computed } from 'vue';
-import { ChevronDown } from 'lucide-vue-next';
-
 export interface SelectOption {
   label: string;
   value: string | number;
@@ -68,7 +65,7 @@ const handleFocus = (event: FocusEvent) => emit('focus', event);
           {{ option.label }}
         </option>
       </select>
-      <ChevronDown class="c-base-select__icon" :size="16" />
+      <LucideChevronDown class="c-base-select__icon" :size="16" />
     </div>
     <span v-if="error" class="c-base-select__error">{{ error }}</span>
   </div>

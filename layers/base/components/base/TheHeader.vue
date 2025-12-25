@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import { Menu } from 'lucide-vue-next';
-
 withDefaults(defineProps<{
   title?: string
 }>(), {
@@ -16,7 +14,7 @@ const emit = defineEmits<{
   <header class="l-header">
     <div class="l-header__inner">
       <button class="l-header__toggle" @click="emit('toggle-menu')" aria-label="Toggle Menu">
-        <Menu :size="24" />
+        <LucideMenu :size="24" />
       </button>
       <div class="l-header__logo">
         {{ title }}

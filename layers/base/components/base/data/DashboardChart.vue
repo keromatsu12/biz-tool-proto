@@ -12,7 +12,6 @@ import {
   ArcElement,
 } from 'chart.js';
 import { Line, Bar, Pie, Doughnut } from 'vue-chartjs';
-import { computed } from 'vue';
 
 // Register ChartJS components
 ChartJS.register(

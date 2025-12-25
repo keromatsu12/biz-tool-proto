@@ -1,7 +1,4 @@
 <script setup lang="ts">
-import { ref, computed } from 'vue';
-import { Upload, X, File as FileIcon } from 'lucide-vue-next';
-
 const props = withDefaults(defineProps<{
   modelValue?: File | null;
   label?: string;
@@ -79,7 +76,7 @@ const triggerBrowse = () => {
         @change="handleFileSelect"
       />
       <div class="c-input-file__placeholder">
-        <Upload :size="24" class="c-input-file__icon" />
+        <LucideUpload :size="24" class="c-input-file__icon" />
         <span class="c-input-file__text">Click to upload or drag and drop</span>
         <span v-if="accept" class="c-input-file__subtext">{{ accept }}</span>
       </div>
@@ -87,12 +84,12 @@ const triggerBrowse = () => {
 
     <div v-else class="c-input-file__preview">
       <div class="c-input-file__info">
-        <FileIcon :size="20" class="c-input-file__file-icon" />
+        <LucideFile :size="20" class="c-input-file__file-icon" />
         <span class="c-input-file__name">{{ modelValue.name }}</span>
         <span class="c-input-file__size">{{ (modelValue.size / 1024).toFixed(1) }} KB</span>
       </div>
       <button type="button" class="c-input-file__remove" @click="removeFile" :disabled="disabled">
-        <X :size="16" />
+        <LucideX :size="16" />
       </button>
     </div>
 
