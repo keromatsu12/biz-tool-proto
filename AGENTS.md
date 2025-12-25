@@ -258,28 +258,44 @@ describe ブロック等を用いて、以下の 3 つの観点を網羅・分�
 
 - **Vitest/Playwright の初期設定:** 最初のテストケース（ポリシーに則った Builder とサンプルテスト）を作成。
 
-# All PRs SHALL adhere to one of the following categories and comply with the respective rules.
+# 8. ブランチ運用とコミット規約 (Git Flow)
 
-1. Feature Update
-   - SHALL include only functional changes (e.g., adding, modifying, or removing features).
-   - SHALL NOT include any non-functional changes, such as:
-     - Removing comments
-     - Changing access modifiers (e.g., public/private)
-     - Exposing local/internal functions
-     - Modifying or removing #pragma or other compiler directives
-     - Pure formatting or whitespace changes
-2. Security Update
-   - SHALL include only security-related fixes or improvements.
-3. Optimization
-   - SHALL include performance or resource usage improvements that DO NOT alter functionality.
-   - SHALL ensure that the optimized code is already covered by existing tests.
-     1. If NOT covered by tests, DO NOT create an optimization PR.
-     2. Instead, first submit a test coverage update PR with no optimization changes included.
-4. Other Changes
-   - Covers all other types of changes that do not fit the above categories (e.g., documentation, refactoring).
-   - SHOULD be submitted in separate PRs and clearly labeled.
+標準的な Git Flow 戦略と Conventional Commits を採用します。
 
-NOTE:
+## 8.1. ブランチ戦略
 
-- If your changes span multiple categories, split them into separate PRs according to category.
-- Clearly state the category in the PR title (e.g., [Feature] Add user login feature, [Security] Fix token validation).
+| ブランチ名 | 役割 | 分岐元 | マージ先 | 命名規則 |
+| :--- | :--- | :--- | :--- | :--- |
+| **main** | 本番環境用。常にリリース可能な状態を維持。 | - | - | - |
+| **develop** | 開発用。次期リリースのための統合ブランチ。 | main | - | - |
+| **feature** | 新機能開発や変更。 | develop | develop | `feature/記述` |
+| **bugfix** | リリース前のバグ修正。 | develop | develop | `bugfix/記述` |
+| **release** | リリース準備（バージョン番号の更新など）。 | develop | main, develop | `release/vX.Y.Z` |
+| **hotfix** | 本番環境の緊急修正。 | main | main, develop | `hotfix/記述` |
+
+## 8.2. コミットメッセージのフォーマット
+
+Conventional Commits に従い、以下のフォーマットを使用してください。
+
+`<type>: <subject>`
+
+**Types:**
+
+- **feat:** 新機能
+- **fix:** バグ修正
+- **docs:** ドキュメントのみの変更
+- **style:** コードの動作に影響しない変更（空白、フォーマットなど）
+- **refactor:** バグ修正も機能追加も行わないコードの変更
+- **perf:** パフォーマンスを向上させるコードの変更
+- **test:** テストの追加や修正
+- **chore:** ビルドプロセスやドキュメント生成などの補助ツールやライブラリの変更
+
+**例:**
+- `feat: ログイン機能を追加`
+- `fix: ヘッダーのレイアウト崩れを修正`
+- `chore: パッケージ依存関係を更新`
+
+## 8.3. Pull Request (PR) 運用
+
+- PR のタイトルはコミットメッセージと同様のフォーマット (`<type>: <subject>`) を推奨します。
+- PR 作成時に適切なマージ先（通常は `develop`）を選択してください。
