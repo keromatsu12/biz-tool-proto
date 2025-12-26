@@ -1,0 +1,13 @@
+.l-container {
+  width: 100%;
+  max-width: 1200px;
+  margin-right: auto;
+  margin-left: auto;
+
+  // Padding is often handled by l-main__inner, but if nested, it ensures content doesn't touch edges on small screens if l-main__inner padding is removed or different.
+  // However, since l-main__inner has padding, l-container inside it might not need it, or might double it.
+  // Standard bootstrap container has padding.
+  // Let's rely on l-main__inner for outer padding, and l-container for max-width.
+  // But if l-main__inner padding is small, we might want to ensure responsiveness.
+  // For now, simple centering is the goal.
+}
